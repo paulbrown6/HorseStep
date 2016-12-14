@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <BorderPane fx:id="home" disable="false" prefHeight="768.0" prefWidth="1024.0" visible="true">
+         <center>
+            <VBox alignment="CENTER" maxHeight="600.0" maxWidth="400.0" minHeight="500.0" minWidth="200.0" prefHeight="500.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="playButton" maxHeight="70.0" maxWidth="300.0" minHeight="70.0" minWidth="300.0" mnemonicParsing="false" onAction="#play" prefHeight="70.0" prefWidth="300.0" text="Play">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font></Button>
+                  <Button maxHeight="70.0" maxWidth="300.0" minHeight="70.0" minWidth="300.0" mnemonicParsing="false" onAction="#score" prefHeight="70.0" prefWidth="300.0" text="Score">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font></Button>
+                  <Button maxHeight="70.0" maxWidth="300.0" minHeight="70.0" minWidth="300.0" mnemonicParsing="false" onAction="#information" prefHeight="70.0" prefWidth="300.0" text="Information">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font></Button>
+                  <Button maxHeight="70.0" maxWidth="300.0" minHeight="70.0" minWidth="300.0" mnemonicParsing="false" onAction="#exit" prefHeight="70.0" prefWidth="300.0" text="Exit">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font></Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="sound" fitHeight="50.0" fitWidth="60.0" onMouseClicked="#clickSound" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="350.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/images/soundon.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="nameArea" maxHeight="30.0" minHeight="30.0" onAction="#rename" prefHeight="30.0" prefWidth="192.0" promptText="Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="208.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top></BorderPane>
+      <BorderPane fx:id="game" disable="true" prefHeight="768.0" prefWidth="1024.0" visible="false">
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="soundg" fitHeight="50.0" fitWidth="60.0" onMouseClicked="#clickSound" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="350.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/images/soundon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="config" fitHeight="50.0" fitWidth="60.0" onMouseClicked="#clickConfig" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="350.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/images/configure.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <center>
+            <GridPane fx:id="gamepane" alignment="CENTER" gridLinesVisible="true" hgap="0.0" maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" vgap="0.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="249.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <Label fx:id="scoreLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="271.0" text="Score: 10000" textAlignment="CENTER" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+         </bottom></BorderPane>
+      <BorderPane fx:id="score" disable="true" prefHeight="768.0" prefWidth="1024.0" visible="false">
+         <center>
+            <ScrollPane fx:id="scorePane" hbarPolicy="NEVER" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin></ScrollPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="sounds" fitHeight="50.0" fitWidth="60.0" onMouseClicked="#clickSound" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="750.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/images/soundon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#cancel" prefHeight="49.0" prefWidth="318.0" text="Cancel" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="100.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+         </bottom></BorderPane>
+      <BorderPane fx:id="information" disable="true" prefHeight="768.0" prefWidth="1024.0" visible="false">
+         <center>
+            <ScrollPane hbarPolicy="NEVER" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin></ScrollPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="soundi" fitHeight="50.0" fitWidth="60.0" onMouseClicked="#clickSound" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="750.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../resources/images/soundon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#cancel" prefHeight="49.0" prefWidth="318.0" text="Cancel" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="100.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+         </bottom></BorderPane>
+      <Rectangle fx:id="effectConfig" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#000000b6" height="768.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="1024.0" />
+      <BorderPane fx:id="configurate" disable="true" layoutX="292.0" layoutY="219" prefHeight="330.0" prefWidth="440.0" visible="false">
+         <center>
+            <VBox maxHeight="150.0" maxWidth="300.0" prefHeight="150.0" prefWidth="300.0">
+               <Button mnemonicParsing="false" onAction="#cancel" prefHeight="60.0" prefWidth="300.0" text="Exit to Menu" BorderPane.alignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="23.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="20.0" top="20.0" />
+                  </VBox.margin></Button>
+               <Button mnemonicParsing="false" onAction="#cancelConfig" prefHeight="60.0" prefWidth="300.0" text="Cancel" BorderPane.alignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="23.0" />
+                  </font></Button>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center></BorderPane>
+      <Text fx:id="textfail" disable="true" fill="RED" layoutX="452.0" layoutY="319" stroke="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0.0" text="Fail!" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="Arial Bold" size="58.0" />
+         </font></Text>
+      <Text fx:id="textscore" disable="true" fill="RED" layoutX="312.0" layoutY="399" strokeType="OUTSIDE" strokeWidth="0.0" text="Score: 0000" visible="false">
+         <font>
+            <Font size="75.0" />
+         </font></Text>
+      <Text fill="#000780" layoutX="890.0" layoutY="740" strokeType="OUTSIDE" strokeWidth="0.0" text="PBCorp. Ver.0.1" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
